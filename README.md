@@ -9,3 +9,17 @@ setInterval(() => {
     WAS_IMMER_DAS_HERZ_BEGEHRT;
 }, 1000 / 5); // entspricht hier 5x pro Sekunde => alle 200 ms
 ```
+
+## Semesterwoche 02
+Variablen sollten immer als `const` (immutable) oder als `let` (mutable) deklariert werden. **NIE** `var` oder globale Variablen verwenden.
+
+Alpha-Transfer, Beta- & Eta-Reduktion:
+```javascript
+const id = x => x;
+const konst x => y => x;
+const snd = konst (id);
+
+document.writeln( id(id) === id );
+document.writeln( konst(id)(undefined) === id );
+document.writeln( snd(undefined)(id) === id );
+```

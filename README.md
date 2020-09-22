@@ -13,7 +13,7 @@ setInterval(() => {
 ## Semesterwoche 02
 Variablen sollten immer als `const` (immutable) oder als `let` (mutable) deklariert werden. **NIE** `var` oder globale Variablen verwenden.
 
-Alpha-Transfer, Beta- & Eta-Reduktion:
+Lambda-Reduktionen ($\alpha$, $\beta$, $\eta$):
 ```javascript
 const id = x => x;
 const konst x => y => x;

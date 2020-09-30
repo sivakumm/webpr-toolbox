@@ -23,3 +23,16 @@ document.writeln( id(id) === id );
 document.writeln( konst(id)(undefined) === id );
 document.writeln( snd(undefined)(id) === id );
 ```
+
+## Semesterwoche 03
+Strategie mit Konstruktoren und Accessoren (`the basic sum type`):
+```javascript
+const Left   = x => f => g => f (x);        // ctor 1
+const Right  = x => f => g => g (x);        // ctor 2
+const either = e => f => g => e (f) (g);    // accessor
+```
+
+Einsatz von `either`, um null / undefined zu umgehen:
+```javascript
+either (expression) (Fehlerbehandlung) (positiveRueckmeldung);
+```

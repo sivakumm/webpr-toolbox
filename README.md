@@ -36,3 +36,31 @@ Einsatz von `either`, um null / undefined zu umgehen:
 ```javascript
 either (expression) (Fehlerbehandlung) (positiveRueckmeldung);
 ```
+
+## Semesterwoche 04
+Array deconstructor:
+```javascript
+let [x, y] = [1, 2]     // x = 1, y = 2
+const swap = ([x, y]) => [y, x];
+```
+
+Map:
+```javascript
+const twoTimes = x => x * 2;
+[1, 2, 3].map(x => twoTimes(x));
+[1, 2, 3].map(twoTimes);            // [2, 4, 6]
+```
+
+Filter
+```javascript
+const odd = x => x % 2 === 1;
+[1, 2, 3].filter(x => odd(x));
+[1, 2, 3].filter(odd);              // [1, 3]
+```
+
+Reduce:
+```javascript
+const plus = (accu, cur) => accu + cur;
+[1, 2, 3].reduce((accu, cur) => accu + cur);
+[1, 2, 3].reduce(plus);             // 6
+```

@@ -64,3 +64,19 @@ const plus = (accu, cur) => accu + cur;
 [1, 2, 3].reduce((accu, cur) => accu + cur);
 [1, 2, 3].reduce(plus);             // 6
 ```
+
+## Semesterwoche 05
+Strings in JavaScript:
+```javascript
+const str1 = 'string ' + VARIABLE;
+const str2 = "string " + VARIABLE;
+const str3 = `string ${VARIABLE}`;  // multiple line möglich
+const str4 = String( ELEMENT );     // ELEMENT kann ein Typ sein, bsp number oder boolean
+                                    // aber auch ein RegEx.
+```
+
+Strings als code durchführen:
+```javascript
+eval(STRING_HERE);                          // wird bei jedem Aufruf neu geparst -> evaluiert
+Function(PARAMETER, 'return ' + FUNCTION);  // wird ein mal global evaluiert
+```

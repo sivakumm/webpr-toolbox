@@ -80,3 +80,76 @@ Strings als code durchführen:
 eval(STRING_HERE);                          // wird bei jedem Aufruf neu geparst -> evaluiert
 Function(PARAMETER, 'return ' + FUNCTION);  // wird ein mal global evaluiert
 ```
+
+## Semesterwoche 06
+Objekte erstellen:
+```javascript
+// open, dynamic
+const Person = {
+    firstname: "Max",
+    lastname: "Muster",
+    getName: function() {
+        return this.firstname + " " + this.lastname
+    }
+};
+
+// closed, explicit
+function Person(firs, last) {
+    let firstname = first;
+    let lastname = last;
+    return {
+        getName: function() {
+            return firstname + " " + lastname
+        }
+    }
+}
+
+// mixed, classified
+const Person = ( () => {
+    function Person(first, last) {
+        this.firstname = first;
+        this.lastname = last;
+    }
+
+    Person.prototype.getName = function() {
+        return this.firstname + " " + this.lastname;
+    }
+
+    return Person;
+}) (); // new Person("Max", "Muster") instance of Person
+```
+
+## Semesterwoche 07
+Klassen erstellen:
+```javascript
+class Person {
+    constructor(first, last) {
+        this.firstname = first;
+        this.lastname = last;
+    }
+
+    getName() {
+        return this.firstname + " " + this.lastname;
+    }
+} // new Person("Max", "Muster") instance of Person
+```
+
+```javascript
+class Student extends Person {
+    constructor(first, last, grade) {
+        super(first, last); // WICHTIG!
+        this.grade = grade;
+    }
+}
+
+const s = new Student("Max", "Muster", 5.5);
+```
+
+Prototype:
+```javascript
+Number.prototype.times = function(callback) {
+    return Array.from({ length: this }, (_, idx) => callback(idx));
+}
+
+(10).times(n => console.log(n));
+```

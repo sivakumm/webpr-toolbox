@@ -181,3 +181,20 @@ testNames.forEach( testName => {
     document.write(`<script src="${testName}/${testName}Test.js"></s`+'cript>');
 });
 ```
+
+## Semesterwoche 09
+Einfacher Observer:
+```javascript
+const Observable = value => {
+    const listeners = [];
+    return {
+        onChange: callback => listeners.push(callback),
+        getValue: ()       => value,
+        setValue: val      => {
+            if (val === value) return;
+            value = val;
+            listeners.forEach(notify => notify(val));
+        }
+    }
+}
+```

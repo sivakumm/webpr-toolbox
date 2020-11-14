@@ -153,3 +153,31 @@ Number.prototype.times = function(callback) {
 
 (10).times(n => console.log(n));
 ```
+
+## Semesterwoche 08
+Testing, z. B. das Prototype Beispiel aus Semesterwoche 07:
+```javascript
+test("util-times1", assert => {
+
+    const collect = [];
+
+    (10).times( n => collect.push(n) );
+
+    assert.equals(collect.length ,  10);
+    assert.equals(collect[0]     ,   0);
+    assert.equals(collect[9]     ,   9);
+}) ;
+```
+
+Ein Weg um JavaScript zu laden:
+```javascript
+const testNames = [
+    'util',
+    'todo'
+];
+
+testNames.forEach( testName => {
+    document.write(`<script src="${testName}/${testName}.js"></s`+'cript>');
+    document.write(`<script src="${testName}/${testName}Test.js"></s`+'cript>');
+});
+```

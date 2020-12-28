@@ -291,3 +291,28 @@ scheduler.add(ok => {
 });
 ```
 
+## Semesterwoche 12
+### Modules
+Import laden:
+```javascript
+<script src="./my.js" type="module">
+import("./my.js").then(module => ...);
+```
+
+Importieren:
+```javascript
+// IMMER explizit!
+import "MODULE_NAME";
+import { EXPORT1, EXPORT2 } from "MODULE_NAME";
+```
+
+Exportieren:
+```javascript
+// IMMER explizit!
+export { EXPORT1, EXPORT2, EXPORT3, ..., EXPORTN };
+```
+
+Hinweise:
+- Exports sind `read-only`
+- kein Globales Objekt => kein globales `this`
+- Module sind Namespaces & Singletons

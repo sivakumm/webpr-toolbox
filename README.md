@@ -287,7 +287,7 @@ scheduler.add(ok => {
     setTimeout(_ => {       // simulieren eines asynchronen Tasks
         console.log(42);
         ok();
-    }, 100)
+    }, 100);
 });
 ```
 

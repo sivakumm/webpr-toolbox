@@ -198,3 +198,6 @@ const Observable = value => {
     }
 }
 ```
+
+### Higher-order Functions:
+Funktionen als Argumente einer Funktion übergeben. Dies ist möglich, weil in JavaScript Funktionen auch Objekte sind.

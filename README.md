@@ -211,3 +211,40 @@ const someFunction = (logFn) => {
     logFn(msg);  // erstellt ein console.log
 }
 ```
+
+## Semesterwoche 10
+Promises können asynchronen Task ausführen und die Ergebnisse können nach der Ausführung abgeholt werden mittels `.then()` Signatur oder `async / await` Modell. \
+Promise erstellen:
+```javascript
+const isAnswerToEverything = (input) => new Promise( (resolve, reject) => {
+    if (input === 42) {
+        resolve('YES, it is!');     // Rückgabe bei Erfolg
+    } else {
+        reject('NOO!');             // Rückgabe bei Fehlerfall
+    }
+});
+```
+
+Der Zugriff über `.then()` `.catch()`:
+```javascript
+isAnswerToEverything(VALUE)
+    .then(console.log)          // ==> .then(response => console.log(response))
+    .catch(console.error);
+
+// Bei VALUE = 42 wird auf console 'YES, it is!' geschrieben
+// Bei VALUE != 42 wird auf console 'NOO!' als Error geschrieben
+```
+
+Der Zugriff über `async / await` *blockiert* bis ein Resultat vorhanden ist:
+```javascript
+const needAnswer = async () => {
+    console.log('Will check for answer...');
+    await isAnswerToEverything(42);
+    console.log('... got an answer.');
+}
+
+// Ausführungsreihenfolge wie erwartet auf Konsole:
+// Will check for answer...
+// YES, it is!
+// ... got an answer.
+```

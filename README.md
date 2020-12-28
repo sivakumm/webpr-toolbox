@@ -201,3 +201,13 @@ const Observable = value => {
 
 ### Higher-order Functions:
 Funktionen als Argumente einer Funktion übergeben. Dies ist möglich, weil in JavaScript Funktionen auch Objekte sind.
+```javascript
+const logger = (message) => console.log(message); // Erinnerung: ETA-Reduktion möglich zu:
+                                                  // const logger = console.log;
+
+const someFunction = (logFn) => {
+    // do some stuff here
+    const msg = ...;
+    logFn(msg);  // erstellt ein console.log
+}
+```

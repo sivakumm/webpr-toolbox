@@ -248,3 +248,46 @@ const needAnswer = async () => {
 // YES, it is!
 // ... got an answer.
 ```
+
+## Semesterwoche 11
+`Scheduler` können genutzt werden, um verschiedene asynchrone Tasks in einer gewünschten Reihenfolge abzuarbeiten. Die Idee ist die Erstellung eines Queues (FIFO), welche die Tasks enthält und einer nach dem anderen abarbeitet. (Ähnlich wie bei *reactive stream* oder *flux architecture*)
+```javascript
+const Scheduler = () => {
+    let inProcess = false;
+    const tasks = [];
+    function process() {
+        if (inProcess) { return; }
+        if (tasks.length === 0) { return; }
+        inProcess = true;
+        const task = tasks.pop();
+
+        new Promise( (resolve, reject) => {
+            task(resolve);
+        }). then ( () => {
+            inProcess = false;
+            process();
+        });
+    }
+    function add(task) {
+        tasks.unshift(task);
+        process();
+    }
+    return {
+        add: add,
+        addOk: task => add( ok => { task(); ok(); })
+    }
+};
+```
+
+Anwendung:
+```javascript
+const scheduler = Scheduler();
+
+scheduler.add(ok => {
+    setTimeout(_ => {       // simulieren eines asynchronen Tasks
+        console.log(42);
+        ok();
+    }, 100)
+});
+```
+

@@ -1,5 +1,11 @@
 # Web Programming - Toolbox of Mithusan Sivakumar
 
+## Einleitung
+Dieses Toolbox wurde im Rahmen der Vorlesung [Web Programming](https://www.fhnw.ch/de/studium/module/9248673) erstellt. 
+Es beinhaltet Erklärungen von JavaScript-Konzepte, Code-Snippets und Ideen für Umsetzung von Aufgaben in verschiedenster Schwierigkeitsstufen. 
+Das Dokument hilft, um Ideen & Konzepte zu rekapitulieren und mit den zur Verfügung stehenden Informationen schnell adaptiv einen bestmöglichen Lösungsansatz zu finden. 
+Es ist nicht gedacht als Modules oder Ähnliches, um in andere Codes importiert zu werden. 
+
 ## Semesterwoche 01
 `setInterval()` ist eine Funktion, um gewisse Funktionen, Expression, etc. in vorgegebenen Intervallen immer wieder aufzurufen. Die angegebene Zeit ist in ms.
 ```javascript
